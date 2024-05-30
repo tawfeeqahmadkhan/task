@@ -28,13 +28,13 @@ const App = () => {
 
    useEffect(() => { 
         
-     fetch('http://localhost:3000/employees')
+     fetch('https://tak-qbhp.onrender.com/employees')
        .then(res => res.json())
        .then(setEmployees);
-     fetch('http://localhost:3000/notifications')
+     fetch('https://tak-qbhp.onrender.com/notifications')
        .then(res => res.json())
        .then(setNotifications);
-    fetch('http://localhost:3000/tickets')
+    fetch('https://tak-qbhp.onrender.com/tickets')
       .then(res => res.json())
       .then(setTickets);
 
@@ -52,7 +52,7 @@ const App = () => {
         const localtoken = localStorage.getItem('localtoken');
         if(!localtoken){
           localStorage.setItem('localtoken',token)
-          fetch('http://localhost:3000/tokens', {
+          fetch('https://tak-qbhp.onrender.com/tokens', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json'
@@ -72,7 +72,7 @@ const App = () => {
    
  }, []);
   const handleSendNotification = () => {
-    fetch('http://localhost:3000/notify', {
+    fetch('https://tak-qbhp.onrender.com/notify', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -85,7 +85,7 @@ const App = () => {
   };
 
   const handleCreateTicket = () => {
-    fetch('http://localhost:3000/tickets', {
+    fetch('https://tak-qbhp.onrender.com/tickets', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -94,7 +94,7 @@ const App = () => {
     }).then(res => res.json()).then(newTicket => setTickets([...tickets, newTicket]));
   };
   const handleSenduser = () => {
-    fetch('http://localhost:3000/employees', {
+    fetch('https://tak-qbhp.onrender.com/employees', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -112,7 +112,7 @@ const App = () => {
     }
   };
   const login = ()=>{
-    fetch('http://localhost:3000/login', {
+    fetch('https://tak-qbhp.onrender.com/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
